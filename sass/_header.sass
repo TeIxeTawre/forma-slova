@@ -1,0 +1,184 @@
+.header
+
+ .container
+  padding: 0
+
+ &-one, &-two
+  width: 50vw
+  min-height: 100vh
+  padding-top: 34px
+
+ // first screen
+ &-one
+  background-color: $main-background
+  padding-left: 50px
+  
+  &__btn
+   padding: 29px 44px 27px
+   font-weight: bold
+   font-size: 14px
+   line-height: 16px
+   letter-spacing: 0.1em
+   text-transform: uppercase
+   span
+    font-weight: 900
+    font-size: 16px
+    line-height: 18px
+    letter-spacing: 0.1em
+    text-transform: uppercase
+  
+.navbar
+ display: flex
+
+ nav, .nav
+  width: 100%
+
+  ul
+   display: flex
+   justify-content: space-between
+   height: 100%
+   margin: 0 6rem 0 7rem
+   margin-top: -3px
+
+   li
+    height: 100%
+    a
+     display: flex
+     align-items: center
+     height: 100%
+     font-weight: bold
+     font-size: 1.2rem
+     text-transform: uppercase
+     letter-spacing: 0.1rem
+     line-height: 1.4rem
+     text-decoration: none
+     color: #fff
+     opacity: 0.7
+     position: relative
+     &:after
+      content: ''
+      position: absolute
+      bottom: 35%
+      left: 0
+      height: 4px
+      width: 0
+      display: block
+      transition: width .5s
+      background-color: #fff
+      opacity: 0.7
+     &:hover
+      &:after
+       width: 100%
+
+.logo
+ img
+  width: 17rem
+
+
+main, .main
+ max-width: 58rem
+ margin-top: 10.2rem
+
+ h1, .h1
+  font-size: 6.4rem
+  font-family: "Oswald", sans-serif
+  font-weight: bold
+  line-height: 9.5rem
+  color: #fff
+
+.advantages
+ display: flex
+ justify-content: space-between
+ margin-left: -25px
+ margin-right: 25px
+ margin-bottom: 12.2rem
+
+ &__item
+  width: 14rem
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+ &__img
+  
+ &__icon
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 0 auto
+
+ &__icon_first
+  margin-top: 2.1rem
+  width: 10rem
+  height: 10.7rem
+  background: url(../img/adv-bg-1.png) no-repeat center center / contain
+
+ &__icon_second
+  margin-top: 1rem
+  width: 13.5rem
+  height: 11.9rem
+  background: url(../img/adv-bg-2.png) no-repeat center center / contain
+ 
+ &__icon_third
+  margin-top: 2rem
+  margin-left: 1rem
+  width: 10.4rem
+  height: 9.9rem
+  background: url(../img/adv-bg-3.png) no-repeat center center / contain
+
+ &__description
+  color: #fff
+  opacity: 0.8
+  line-height: 21px
+  text-align: center
+  font-size: 18px
+  margin-top: 2rem
+
+// second screen
+.header
+ &-two
+  padding-right: 50px
+  background-color: #EDEDED
+  position: relative
+
+  .navbar-con
+   display: flex
+   align-items: center
+   justify-content: flex-end
+  &__btn
+   margin-right: 30px
+   padding: 1.8rem 2.6rem 1.9rem
+   font-weight: bold
+   font-size: 12px
+   line-height: 14px
+   letter-spacing: 0.1em
+   text-transform: uppercase
+   display: inline-block
+   span
+    font-weight: 900
+    font-size: 13px
+    line-height: 15px
+    letter-spacing: 0.1em
+    text-transform: uppercase
+  &__phone
+   font-family: "Oswald", sans-serif
+   font-weight: bold
+   font-size: 2.4rem
+   line-height: 3.6rem
+   color: $main-background
+   display: inline-block
+   &:hover
+    text-decoration: underline
+
+  &-slider
+   position: absolute
+   top: 121px
+   left: -209px
+   height: 758px
+   width: 1119px
+   border-radius: 10px
+   overflow: hidden
+   box-shadow: 0 30px 60px rgba(#000, .2)
+   &__item
+    &_moroil
+     height: 100%
+     background: url(../img/moroil.jpg) no-repeat top center / 101%
