@@ -5,8 +5,8 @@
 
  &-one, &-two
   width: 50vw
-  min-height: 100vh
   padding-top: 34px
+  padding-bottom: 100px
 
  // first screen
  &-one
@@ -182,3 +182,49 @@ main, .main
     &_moroil
      height: 100%
      background: url(../img/moroil.jpg) no-repeat top center / 101%
+
+.ham 
+ cursor: pointer
+ tap-highlight-color: transparent
+ transition: transform 200ms
+ user-select: none
+ fill: none
+ width: 50px
+ margin-left: 30px
+ display: none
+
+.activeMenu .hamRotate
+ transform: rotate(45deg)
+
+.line 
+ fill: none
+ transition: stroke-dasharray 400ms, stroke-dashoffset 400ms
+ stroke: $green
+ stroke-width: 3
+ border-radius: 5px
+ stroke-linecap: round
+
+.ham .top 
+ stroke-dasharray: 40 82
+ transform: translateY(7px)
+
+.ham .middle 
+ stroke-dasharray: 30 111
+
+.ham .bottom 
+ stroke-dasharray: 20 161
+ transform: translateY(-7px)
+
+.activeMenu .ham .top 
+ stroke-dasharray: 35 82
+ stroke-dashoffset: -62px
+ transform: translateY(0px)
+
+.activeMenu .ham .middle 
+ stroke-dashoffset: 23px
+ stroke-dasharray: 40 111
+
+.activeMenu .ham .bottom 
+ stroke-dashoffset: -83px
+ stroke-dasharray: 40 161
+ transform: translateY(0px)
