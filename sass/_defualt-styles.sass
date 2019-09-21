@@ -4,11 +4,56 @@ html
 body
  font-family: 'Roboto', sans-serif
 
-.container
- padding: 0 50px
+h2, .h2, h3, .h3, h4, .h4, p
+ margin: 0
+ padding: 0
+
+.container-header
  width: 100%
  max-width: 1920px
+
+.container-patrons
+ padding: 0 30px
+ width: 100%
+ max-width: 1206px
  display: flex
+
+.container-services
+ width: 100%
+ max-width: 1820px
+ display: flex
+ justify-content: center
+
+.section, section
+ padding: 13.5rem 0 17rem 0
+ display: flex
+ flex-direction: column
+ align-items: center
+
+h2, .h2
+ font-family: 'Oswald', sans-serif
+ font-size: 3.8rem
+ line-height: 5.8rem
+ margin: 0 auto
+ display: inline-block
+ text-transform: uppercase
+ color: $main-background
+ position: relative
+ &:after, &:before
+  content: ''
+  display: block
+  height: 100%
+  width: 16px
+  position: absolute
+  top: 0
+  border-bottom: $bors solid $green
+  border-top: $bors solid $green
+ &:after
+  border-left: $bors solid $green
+  left: -25px
+ &:before
+  border-right: $bors solid $green
+  right: -25px
 
 .btn
  border-radius: 100px
