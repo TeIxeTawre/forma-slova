@@ -100,6 +100,15 @@
 
 @media (max-width: 1100px)
  .header
+  nav, .nav
+   ul
+    position: fixed
+    top: 90px
+    left: 0
+    height: 0
+    width: 100vw
+    overflow: hidden
+
   &-two
    &-slider
     top: 20% !important
@@ -131,13 +140,10 @@
     z-index: 1
 
   &-two
-   height: 0 !important
-   min-height: 0 !important
+   height: 0
    padding: 0
    margin: 0
    position: static
-   .navbar-con
-    display: none !important
    &-slider
     top: 30% !important
     left: 50%
@@ -169,8 +175,6 @@
   margin-right: 0
 
  .header
-  &-two
-   display: none
   &-one
    padding-left: 30px
    padding-right: 30px
