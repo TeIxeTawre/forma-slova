@@ -1,18 +1,25 @@
 @media (max-width: 1860px)
  .header
+  &-one, &-two
+   height: 100vh
   &-two
    &-slider
     top: 20%
     left: -20%
-    width: 110%
-    height: 70%
+    width: 55vw
+    height: auto
     &__item
-     background-size: cover
-     background-position-x: 80%
+     height: 37vw
+     background-size: cover !important
+     background-position-x: 80% !important
 
 @media (max-width: 1640px)
  html
   font-size: 8px
+
+ .header
+  &-one, &-two
+   height: auto !important
 
 @media (max-width: 1366px)
  html
@@ -79,6 +86,12 @@
  .header
   &-two
    padding-right: 32px
+   &-slider
+    top: 160px
+    left: -74px
+    width: 620px
+    &__item
+     height: 433px
 
    &__btn
     padding: 15px 20px 16px 19px
@@ -91,28 +104,27 @@
    &__phone
     font-size: 2rem
     line-height: 3rem
-   &-slider
-    top: 160px
-    left: -74px
-    width: 620px
-    height: 433px
 
 @media (max-width: 1100px)
  .header
   nav, .nav
    ul
-    display: none
+    position: fixed
+    top: 90px
+    left: 0
+    height: 0
+    width: 100vw
+    overflow: hidden
+    
   &-two
    &-slider
-    top: 30%
-    left: 50%
-    width: 48%
+    top: 20% !important
+    left: -10%
+    width: 52vw
     z-index: 0
     height: auto !important
     &__item
-     height: 30vw
-     background-size: cover
-     background-position-x: 80%
+     height: 35vw
  .ham-first
   display: block
 
@@ -139,19 +151,51 @@
    padding: 0
    margin: 0
    position: static
-
+   &-slider
+    top: 30%
+    left: 50%
+    width: 48vw
+    z-index: 0
+    height: auto !important
+    &__item
+     height: 30vw
+   
  .navbar-con
   display: none !important
 
  .ham-second
   display: block
-  margin-right: 30px
-
+  margin-right: 20px
 @media (max-width: 860px)
  .header-two-slider
   display: none !important
 
+ .ham-second
+  margin-right: 0
+
  .header
   &-one
+   padding-left: 30px
+   padding-right: 30px
    main, .main
     margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1, .h1
+     text-align: center
+ .advantages
+  margin-right: 0
+  margin-left: 0
+
+@media (max-width: 560px)
+ html
+  font-size: 8px
+
+@media (max-width: 300px)
+ .advantages
+  display: none
+
+ .html
+  font-size: 6px
