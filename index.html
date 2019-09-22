@@ -15,6 +15,58 @@
 	
 </head>
 <body>
+
+<!-- Обработчик форм -->
+<script>
+    function sendForm(form) {
+        var  msg = $(form).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'send.php',
+            data: msg,
+            success: function(data) {
+                $.modal.close();
+                $("#thanks").modal();
+                console.log('ok')
+            },
+            error: function () {
+                $.modal.close();
+                console.log('error')
+            }
+        });
+    }
+</script>
+
+<!-- Modal HTML embedded directly into document -->
+    <div id="modal-1" class="modal modal-1">
+        <h3 class="h3">
+        	Оставьте свои контакты
+        </h3>
+        <!-- /.h3 -->
+        <p class="description">
+        	Наш менеджер свяжется с Вами в ближайшее время
+        </p>
+        <!-- /.description -->
+        <form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
+          <input type="name" name="user_name" placeholder="Ваше имя" required>
+          <input type="text" name="user_phone" placeholder="№ телефона" required>
+          <input type="email" name="user_email" placeholder="E-mail (не обязательно)">
+          <button type="submit" class="btn btn-orange header-one__btn btn-primary">
+          	Рассчитать цену
+			<span class="fas fa-long-arrow-alt-right"></span>
+          </button>
+      </form>
+    </div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="thanks" class="modal">
+	<div class="thanks-pair">
+		<img src="img/i.png" alt="ok">
+	    <h3 class="h3">Спасибо за обращение!</h3>
+	    <p class="description">Наш менеджер свяжется с Вами в ближайшее время для обсуждения деталей Вашего запроса</p>
+	</div>
+	<!-- /.thanks-pair -->
+</div>
 	
 	<header class="header">
 		<div class="container-header">
@@ -99,10 +151,11 @@
 						<!-- /.advantages__item -->
 					</div>
 					<!-- /.header-one__adv -->
-					<a href="#" class="header-one__btn btn btn-orange">
+					<a href="#modal-1" rel="modal:open" class="header-one__btn btn btn-orange">
 						Рассчитать цену
 						<span class="fas fa-long-arrow-alt-right"></span>
 					</a>
+
 				</main>
 			</div>
 			<!-- /.header-one -->
@@ -332,16 +385,16 @@
 						Не важно, какой у Вас бюджет и задача, мы найдем решение!
 					</h3>
 					<!-- /.h3 -->
-					<form action="#" method="POST" name="forma-slova">
+					<form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
 						<div class="part">
 							<div class="part-one">
-								<input type="name" required="" placeholder="Ваше имя" name="name">
-								<input type="phone" required="" placeholder="№ телефон" name="phone">
-								<input type="email" placeholder="E-mail" name="email">
+								<input type="name" required placeholder="Ваше имя" name="user_name">
+								<input type="text" required placeholder="№ телефон" name="user_phone">
+								<input type="email" placeholder="E-mail" name="user_email">
 							</div>
 							<!-- /.part-one -->
 							<div class="part-two">
-								<textarea name="query" id="query" cols="30" rows="8" required="" placeholder="Опишите Ваш запрос:"></textarea>
+								<textarea name="user_message" id="query" cols="30" rows="5" required="" placeholder="Опишите Ваш запрос:"></textarea>
 								<div class="file-pair">
 									<i class="fas fa-paperclip"></i>
 									<span>прикрепить файл</span>
@@ -465,18 +518,33 @@
 				Наши работы
 			</h2>
 			<!-- /.h2 -->
-			<div class="wrapper wrapper-one">
-				
+			<div class="wrapper-pair">
+				<div class="wrapper wrapper-one">
+					<img src="img/work-1.jpg" alt="work">
+					<div class="pair">
+						<img src="img/work-2.jpg" alt="work">
+						<img src="img/work-3.jpg" alt="work">
+					</div>
+					<img src="img/work-4.jpg" alt="work">
+				</div>
+				<!-- /.wrapper-one -->
+				<div class="wrapper wrapper-two">
+					<img src="img/work-5.jpg" alt="work">
+					<img src="img/work-6.jpg" alt="work">
+					<img src="img/work-7.jpg" alt="work">
+				</div>
+				<!-- /.wrapper-two -->
+				<div class="wrapper wrapper-three">
+					<img src="img/work-8.jpg" alt="work">
+					<img src="img/work-9.jpg" alt="work">
+					<div class="pair">
+						<img src="img/work-10.jpg" alt="work">
+						<img src="img/work-11.jpg" alt="work">
+					</div>
+				</div>
+				<!-- /.wrapper-three -->
 			</div>
-			<!-- /.wrapper-one -->
-			<div class="wrapper wrapper-two">
-				
-			</div>
-			<!-- /.wrapper-two -->
-			<div class="wrapper wrapper-three">
-				
-			</div>
-			<!-- /.wrapper-three -->
+			<!-- /.wrapper-pair -->
 		</section>
 		<!-- /.section work -->
 
