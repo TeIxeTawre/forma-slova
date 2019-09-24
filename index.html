@@ -150,8 +150,54 @@
 		</h2>
 		<!-- /.h2 -->
 		<div class="container-patrons">
-			<img src="img/partners.png" alt="partners" class="partners d-none d-lg-block">
-			<img src="img/partners-90deg.png" alt="partners" class="partners partners-two d-block d-lg-none">
+			<div class="pat-grid"><img src="img/pat-1.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-2.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-3.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-4.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-5.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-6.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-7.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-8.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-9.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-10.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-11.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-12.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-13.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-14.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-15.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-16.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-17.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-18.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-19.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-20.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-21.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-22.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-23.png" alt="pat"></div>
+			<!-- /.pat-grid -->
+			<div class="pat-grid"><img src="img/pat-24.png" alt="pat"></div>
+			<!-- /.pat-grid -->
 		</div>
 		<!-- /.container-patrons -->
 	</section>
@@ -162,7 +208,7 @@
 				<h2 class="h2">Наши услуги</h2>
 				<!-- /.h2 -->
 				<div class="container-ad">
-					<div class="card-pair">
+					<div class="card-pair" id="card-first">
 						<a href="#" class="card">
 							<div class="card__img">
 								<img src="img/ser-1.jpg" alt="carg">
@@ -334,13 +380,25 @@
 					<form id="form-3" enctype="multipart/form-data" action="javascript:" onsubmit="sendForm('#form-3')">
 						<div class="part">
 							<div class="part-one">
-								<input type="name" required placeholder="Ваше имя" name="user_name">
-								<input type="text" required placeholder="№ телефон" name="user_phone">
-								<input type="email" placeholder="E-mail" name="user_email">
+								<span class="label-pair">
+									<label for="form-three-name">Ваше имя<span> *</span></label>
+									<input type="name" id="form-three-name" required name="user_name">
+								</span>
+								<span class="label-pair">
+									<label for="form-three-phone">№ телефона<span> *</span></label>
+									<input type="text" id="form-three-phone" required name="user_phone">
+								</span>								
+								<span class="label-pair">
+									<label for="form-three-email">E-mail</label>
+									<input type="email" id="form-three-email" name="user_email">
+								</span>
 							</div>
 							<!-- /.part-one -->
 							<div class="part-two">
-								<textarea name="user_message" id="query" cols="30" rows="5" required="" placeholder="Опишите Ваш запрос:"></textarea>
+								<span class="label-pair">
+									<label for="form-three-message">Опишите Ваш запрос:<span> *</span></label>
+									<textarea name="user_message" id="query" cols="30" rows="5" required id="form-three-message"></textarea>
+								</span>
 								<div class="file-pair">
 									<i class="fas fa-paperclip"></i>
 									<span>прикрепить файл</span>
@@ -369,91 +427,93 @@
 			</h2>
 			<!-- /.h2 -->
 			<div class="container-ad">
-				<a href="#" class="card">
-					<div class="card__img">
-						<img src="img/ad-1.jpg" alt="card">
-					</div>
-					<!-- /.card__img-pair -->
-					<div class="text">
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Металлоконструкции</p>
+				<div class="card-pair" id="card-second">
+					<a href="#" class="card">
+						<div class="card__img">
+							<img src="img/ad-1.jpg" alt="card">
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Козырьки</p>
+						<!-- /.card__img-pair -->
+						<div class="text">
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Металлоконструкции</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Козырьки</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Навесы</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Заборы</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Архитектурные формы</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Беседки</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Перила</p>
+							</div>
+							<!-- /.stroke -->
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Навесы</p>
+						<!-- /.text -->
+					</a>
+					<!-- /.card -->
+					<a href="#" class="card">
+						<div class="card__img">
+							<img src="img/ad-2.jpg" alt="card">
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Заборы</p>
+						<!-- /.card__img-pair -->
+						<div class="text">
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Рекламный дизайн</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Печатная продукция</p>
+							</div>
+							<!-- /.stroke -->
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Архитектурные формы</p>
+						<!-- /.text -->
+					</a>
+					<!-- /.card -->
+					<a href="#" class="card">
+						<div class="card__img">
+							<img src="img/ad-3.jpg" alt="card">
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Беседки</p>
+						<!-- /.card__img-pair -->
+						<div class="text">
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Монтажные работы</p>
+							</div>
+							<!-- /.stroke -->
+							<div class="stroke">
+								<img src="img/card-icon.png" alt="icon">
+								<p>Согласование документов</p>
+							</div>
+							<!-- /.stroke -->
 						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Перила</p>
-						</div>
-						<!-- /.stroke -->
-					</div>
-					<!-- /.text -->
-				</a>
-				<!-- /.card -->
-				<a href="#" class="card">
-					<div class="card__img">
-						<img src="img/ad-2.jpg" alt="card">
-					</div>
-					<!-- /.card__img-pair -->
-					<div class="text">
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Рекламный дизайн</p>
-						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Печатная продукция</p>
-						</div>
-						<!-- /.stroke -->
-					</div>
-					<!-- /.text -->
-				</a>
-				<!-- /.card -->
-				<a href="#" class="card">
-					<div class="card__img">
-						<img src="img/ad-3.jpg" alt="card">
-					</div>
-					<!-- /.card__img-pair -->
-					<div class="text">
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Монтажные работы</p>
-						</div>
-						<!-- /.stroke -->
-						<div class="stroke">
-							<img src="img/card-icon.png" alt="icon">
-							<p>Согласование документов</p>
-						</div>
-						<!-- /.stroke -->
-					</div>
-					<!-- /.text -->
-				</a>
-				<!-- /.card -->
+						<!-- /.text -->
+					</a>
+					<!-- /.card -->
+				</div>
 			</div>
 			<!-- /.container-ad -->
 		</section>
@@ -685,9 +745,18 @@
 	</p>
 	<!-- /.description -->
 	<form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
-		<input type="name" name="user_name" placeholder="Ваше имя" required>
-		<input type="text" name="user_phone" placeholder="№ телефона" required>
-		<input type="email" name="user_email" placeholder="E-mail (не обязательно)">
+		<span class="label-pair">
+			<label for="form-three-name">Ваше имя<span> *</span></label>
+			<input type="name" id="form-three-name" required name="user_name">
+		</span>
+		<span class="label-pair">
+			<label for="form-three-phone">№ телефона<span> *</span></label>
+			<input type="text" id="form-three-phone" required name="user_phone">
+		</span>								
+		<span class="label-pair">
+			<label for="form-three-email">E-mail (не обязательно)</label>
+			<input type="email" id="form-three-email" name="user_email">
+		</span>
 		<button type="submit" class="btn btn-orange header-one__btn btn-primary">
 		Рассчитать цену
 		<span class="fas fa-long-arrow-alt-right"></span>
@@ -706,8 +775,14 @@
 	</p>
 	<!-- /.description -->
 	<form id="form-2" action="javascript:" onsubmit="sendForm('#form-2')">
-		<input type="name" name="user_name" placeholder="Ваше имя" required>
-		<input type="text" name="user_phone" placeholder="№ телефона" required>
+		<span class="label-pair">
+			<label for="form-three-name">Ваше имя<span> *</span></label>
+			<input type="name" id="form-three-name" required name="user_name">
+		</span>
+		<span class="label-pair">
+			<label for="form-three-phone">№ телефона<span> *</span></label>
+			<input type="text" id="form-three-phone" required name="user_phone">
+		</span>	
 		<button type="submit" class="btn btn-orange header-one__btn btn-primary">
 		Перезвоните мне
 		<span class="fas fa-long-arrow-alt-right"></span>

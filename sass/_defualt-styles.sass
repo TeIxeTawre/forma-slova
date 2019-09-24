@@ -22,11 +22,19 @@ h2, .h2, h3, .h3, h4, .h4, p
  margin: 0 auto
 
 .container-patrons
- padding: 0 30px
  width: 100%
  max-width: 1206px
- display: flex
- margin: 0 auto
+ display: grid
+ grid-template-columns: repeat(8, 1fr)
+ grid-gap: 1px
+ background-color: #DBEAF0
+ .pat-grid
+  width: 150px
+  height: 150px
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #fff
 
 .section, section
  padding: 13.5rem 0 17rem 0

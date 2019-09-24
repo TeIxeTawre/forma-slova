@@ -6,7 +6,11 @@
  .forma
   &__screen-one
    img
-    width: 100%  
+    width: 100%
+
+@media (min-width: 1860px)
+ .row
+  flex-wrap: nowrap !important   
 
 @media (max-width: 1640px)
  .card
@@ -27,7 +31,7 @@
    width: 180px
    input
     width: 180px
- 
+
  .wrapper
   grid-template-columns: 1fr 1fr 1fr
   img
@@ -59,6 +63,9 @@
    margin-bottom: 6.2rem
 
  .part
+  label
+   top: 0.8rem
+   left: 1.5rem
   &-one
    input
     padding: 0.8rem 1.5rem
@@ -89,6 +96,8 @@
    grid-column: auto !important
    &:nth-child(10)
     display: block
+
+
 @media (max-width: 1256px)
  .services
   .container-ad
@@ -96,8 +105,10 @@
  .card-pair
   grid-template-columns: repeat(2, 1fr) !important
   justify-items: end
-
+ .threeGrid
+  grid-template-columns: 1fr !important
  .card
+  min-height: 420px !important
   &:nth-child(even)
    justify-self: start
   &__img
@@ -149,7 +160,14 @@
    &:last-child
     display: block
  
+@media (max-width: 1206px)
+ .container-patrons
+  grid-template-columns: repeat(4, 1fr)
+  .pat-grid
+   width: 100%
 @media (max-width: 560px)
+ .container-patrons
+  grid-template-columns: repeat(2, 1fr)
  .part
   flex-direction: column
   &-two
