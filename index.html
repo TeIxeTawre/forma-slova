@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta charset="UTF-8">
 	<title>Форма слова</title>
 	<!-- fonts -->
@@ -16,58 +17,6 @@
 </head>
 <body>
 
-<!-- Обработчик форм -->
-<script>
-    function sendForm(form) {
-        var  msg = $(form).serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'send.php',
-            data: msg,
-            success: function(data) {
-                $.modal.close();
-                $("#thanks").modal();
-                console.log('ok')
-            },
-            error: function () {
-                $.modal.close();
-                console.log('error')
-            }
-        });
-    }
-</script>
-
-<!-- Modal HTML embedded directly into document -->
-    <div id="modal-1" class="modal modal-1 animated faster fadeInDown">
-        <h3 class="h3">
-        	Оставьте свои контакты
-        </h3>
-        <!-- /.h3 -->
-        <p class="description">
-        	Наш менеджер свяжется с Вами в ближайшее время
-        </p>
-        <!-- /.description -->
-        <form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
-          <input type="name" name="user_name" placeholder="Ваше имя" required>
-          <input type="text" name="user_phone" placeholder="№ телефона" required>
-          <input type="email" name="user_email" placeholder="E-mail (не обязательно)">
-          <button type="submit" class="btn btn-orange header-one__btn btn-primary">
-          	Рассчитать цену
-			<span class="fas fa-long-arrow-alt-right"></span>
-          </button>
-      </form>
-    </div>
-
-<!-- Modal HTML embedded directly into document -->
-<div id="thanks" class="modal animated faster fadeIn">
-	<div class="thanks-pair">
-		<img src="img/i.png" alt="ok">
-	    <h3 class="h3">Спасибо за обращение!</h3>
-	    <p class="description">Наш менеджер свяжется с Вами в ближайшее время для обсуждения деталей Вашего запроса</p>
-	</div>
-	<!-- /.thanks-pair -->
-</div>
-	
 	<header class="header">
 		<div class="container-header">
 			<div class="header-one">
@@ -80,11 +29,11 @@
 					<!-- /.logo -->
 					<nav>
 						<ul>
-							<li><a href="#">Услуги</a></li>
-							<li><a href="#">Заказ</a></li>
-							<li><a href="#">Портфолио</a></li>
-							<li><a href="#">О нас</a></li>
-							<li><a href="#">Контакты</a></li>
+							<li><a href="#services">Услуги</a></li>
+							<li><a href="#form-section">Заказ</a></li>
+							<li><a href="#portfolio">Портфолио</a></li>
+							<li><a href="#company">О нас</a></li>
+							<li><a href="#contacts">Контакты</a></li>
 						</ul>
 						<svg class="ham-second ham hamRotate" viewBox="0 0 100 100" width="80">
 						  <path
@@ -161,7 +110,7 @@
 			<!-- /.header-one -->
 			<div class="header-two">
 				<div class="navbar-con">
-					<a href="tel:+375336360421" class="header-two__btn btn btn-chang">
+					<a href="#modal-2" rel="modal:open" class="header-two__btn btn btn-chang">
 						Перезвоните мне
 						<span class="fas fa-phone"></span>
 					</a>
@@ -195,7 +144,7 @@
 		<!-- /.container -->
 	</header>
 
-	<section class="section patrons">
+	<section class="section patrons" id="patrons">
 		<h2 class="h2">
 			Нам доверяют
 		</h2>
@@ -208,7 +157,7 @@
 	</section>
 	<!-- /.section patrons -->
 
-	<div class="container-header">
+	<div class="container-header" id="services">
 		<section class="section services">
 				<h2 class="h2">Наши услуги</h2>
 				<!-- /.h2 -->
@@ -294,9 +243,6 @@
 							<!-- /.text -->
 						</a>
 						<!-- /.card -->
-					</div>
-					<!-- /.card-pair -->
-					<div class="card-pair">
 						<a href="#" class="card">
 							<div class="card__img">
 								<img src="img/ser-3.jpg" alt="carg">
@@ -374,7 +320,7 @@
 		</section>
 		<!-- /.section services -->
 
-		<div class="forma">
+		<div class="forma" id="form-section">
 			<div class="forma__screen">
 				<div class="forma__screen-one">
 					<img src="img/woman.jpg" alt="form img">
@@ -385,7 +331,7 @@
 						Не важно, какой у Вас бюджет и задача, мы найдем решение!
 					</h3>
 					<!-- /.h3 -->
-					<form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
+					<form id="form-3" enctype="multipart/form-data" action="javascript:" onsubmit="sendForm('#form-3')">
 						<div class="part">
 							<div class="part-one">
 								<input type="name" required placeholder="Ваше имя" name="user_name">
@@ -398,7 +344,7 @@
 								<div class="file-pair">
 									<i class="fas fa-paperclip"></i>
 									<span>прикрепить файл</span>
-									<input type="file">
+									<input type="file" name="fileToUpload" id="fileToUpload">
 								</div>
 								<!-- /.file-pair -->
 							</div>
@@ -417,7 +363,7 @@
 		</div>
 		<!-- /.section forma-slova -->
 
-		<section class="section additional">
+		<section class="section additional" id="additional-services">
 			<h2 class="h2">
 				Дополнительные услуги
 			</h2>
@@ -513,42 +459,106 @@
 		</section>
 		<!-- /.section additional -->
 
-		<section class="section work">
+		<section class="section work" id="portfolio">
 			<h2 class="h2">
 				Наши работы
 			</h2>
 			<!-- /.h2 -->
-			<div class="wrapper-pair">
-				<div class="wrapper wrapper-one">
-					<img src="img/work-1.jpg" alt="work">
-					<div class="pair">
+			<div class="wrapper">
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-1.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-1.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-5.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-5.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-8.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-8.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid" >
+					<span class="font-image" style="background: url(../img/work-2.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
 						<img src="img/work-2.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-3.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
 						<img src="img/work-3.jpg" alt="work">
-					</div>
-					<img src="img/work-4.jpg" alt="work">
-				</div>
-				<!-- /.wrapper-one -->
-				<div class="wrapper wrapper-two">
-					<img src="img/work-5.jpg" alt="work">
-					<img src="img/work-6.jpg" alt="work">
-					<img src="img/work-7.jpg" alt="work">
-				</div>
-				<!-- /.wrapper-two -->
-				<div class="wrapper wrapper-three">
-					<img src="img/work-8.jpg" alt="work">
-					<img src="img/work-9.jpg" alt="work">
-					<div class="pair">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-6.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-6.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-9.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-9.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-4.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-4.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-7.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
+						<img src="img/work-7.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-10.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
 						<img src="img/work-10.jpg" alt="work">
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
+				<a href="#" class="wrapper-grid">
+					<span class="font-image" style="background: url(../img/work-11.jpg) no-repeat center center / cover;">
+					</span>
+					<span class="for-size">
 						<img src="img/work-11.jpg" alt="work">
-					</div>
-				</div>
-				<!-- /.wrapper-three -->
+					</span>
+				</a>
+				<!-- /.wrapper-grid -->
 			</div>
-			<!-- /.wrapper-pair -->
+			<!-- /.wrapper -->
 		</section>
 		<!-- /.section work -->
 
-    	<section class="section company">
+    	<section class="section company" id="company">
     		<h2 class="h2">
 				Наша компания
 			</h2>
@@ -571,7 +581,7 @@
     	</section>
     	<!-- /.section company -->
 
-		<footer class="footer">
+		<footer class="footer" id="contacts">
 			<div class="map">
 				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa9cd751ef994a27c65e43a34cd91cef9ac86c15a89c57f9306c97e138466f17f&amp;width=100%25&amp;height=510&amp;lang=ru_RU&amp;scroll=false"></script>
 				<div class="contact">
@@ -622,7 +632,7 @@
 								<!-- /.contact-layer__icon -->
 							</div>
 							<!-- /.icon-pair -->
-							<a href="tel:+375336360421" class="btn btn-chang footer-btn">
+							<a href="#modal-2" rel="modal:open" class="btn btn-chang footer-btn">
 								Перезвоните мне
 								<span class="fas fa-phone"></span>
 							</a>
@@ -642,6 +652,79 @@
 		<!-- /.footer -->
 	</div>
 	<!-- /.container-header -->
+
+	<!-- Обработчик форм -->
+<script>
+    function sendForm(form) {
+        var  msg = $(form).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'send.php',
+            data: msg,
+            success: function(data) {
+                $.modal.close();
+                $("#thanks").modal();
+                console.log('ok')
+            },
+            error: function () {
+                $.modal.close();
+                console.log('error')
+            }
+        });
+    }
+</script>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="modal-1" class="modal modal-1 animated faster fadeInDown">
+	<h3 class="h3">
+		Оставьте свои контакты
+	</h3>
+	<!-- /.h3 -->
+	<p class="description">
+		Наш менеджер свяжется с Вами в ближайшее время
+	</p>
+	<!-- /.description -->
+	<form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
+		<input type="name" name="user_name" placeholder="Ваше имя" required>
+		<input type="text" name="user_phone" placeholder="№ телефона" required>
+		<input type="email" name="user_email" placeholder="E-mail (не обязательно)">
+		<button type="submit" class="btn btn-orange header-one__btn btn-primary">
+		Рассчитать цену
+		<span class="fas fa-long-arrow-alt-right"></span>
+		</button>
+	</form>
+</div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="modal-2" class="modal modal-1 animated faster fadeInDown">
+	<h3 class="h3">
+		Оставьте свои контакты
+	</h3>
+	<!-- /.h3 -->
+	<p class="description">
+		Наш менеджер свяжется с Вами в ближайшее время
+	</p>
+	<!-- /.description -->
+	<form id="form-2" action="javascript:" onsubmit="sendForm('#form-2')">
+		<input type="name" name="user_name" placeholder="Ваше имя" required>
+		<input type="text" name="user_phone" placeholder="№ телефона" required>
+		<button type="submit" class="btn btn-orange header-one__btn btn-primary">
+		Перезвоните мне
+		<span class="fas fa-long-arrow-alt-right"></span>
+		</button>
+	</form>
+</div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="thanks" class="modal animated faster fadeIn">
+	<div class="thanks-pair">
+		<img src="img/i.png" alt="ok">
+	    <h3 class="h3">Спасибо за обращение!</h3>
+	    <p class="description">Наш менеджер свяжется с Вами в ближайшее время для обсуждения деталей Вашего запроса</p>
+	</div>
+	<!-- /.thanks-pair -->
+</div>
+	
 	
 	<!-- JavaScript and his libraries -->
 	<script src="js/jquery-3.4.1.min.js"></script>

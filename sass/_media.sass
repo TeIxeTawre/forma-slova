@@ -3,18 +3,6 @@
   min-height: 22vw
   &__img
    width: 18vw
- .work
-  padding-bottom: 0 !important
-  h2,.h2
-   margin-bottom: 0
- .wrapper-pair
-  transform: scale(0.8)
- .wrapper
-  img
-   width: 100%
-  .pair
-   img:first-child
-    margin-right: 20px
  .forma
   &__screen-one
    img
@@ -39,6 +27,17 @@
    width: 180px
    input
     width: 180px
+ 
+ .wrapper
+  grid-template-columns: 1fr 1fr 1fr
+  img
+   height: auto
+   width: 100%
+  &-grid
+   grid-row: auto !important
+   grid-column: auto !important
+   &:last-child, &:nth-child(10)
+    display: none
 
 @media (max-width: 1500px)
  .forma
@@ -52,22 +51,12 @@
     padding: 22px 44px 22px
   &__screen
    &-two
-    padding: 5rem 10rem 0
+    padding: 0 10rem
 
  .work
   padding-bottom: 14rem
   h2,.h2
    margin-bottom: 6.2rem
-
- .wrapper
-  width: 20%
-  height: 760px
-  overflow-y: hidden
-  .pair
-   flex-direction: column
- 
- .wrapper-pair
-  transform: scale(1)
 
  .part
   &-one
@@ -77,37 +66,40 @@
    textarea
     padding: 0.8rem 1.5rem
 
-@media (max-width: 1340px)
- .wrapper
-  width: 40%
-  height: 1100px
-  overflow-y: hidden
+@media (max-width: 1480px) and (min-width: 1370px)
+ .part-one
+  width: 220px !important
+  input
+   width: 220px !important
+
 @media (max-width: 1230px)
- .wrapper
-  width: 80%
-  height: auto
-  &-one
-   .pair
-    img:last-child
-     display: none
+
   &-two
    img:nth-child(2)
     display: none
   &-three
    .pair
     display: none !important
- .wrapper-pair
-  flex-direction: column
-  align-items: center
+
+ .wrapper
+  grid-template-columns: 1fr 1fr
+  grid-gap: 10px !important
+  &-grid
+   grid-row: auto !important
+   grid-column: auto !important
+   &:nth-child(10)
+    display: block
 @media (max-width: 1256px)
  .services
   .container-ad
    flex-direction: column
  .card-pair
-  width: 100%
-  justify-content: center
+  grid-template-columns: repeat(2, 1fr) !important
+  justify-items: end
+
  .card
-  margin-top: 2rem
+  &:nth-child(even)
+   justify-self: start
   &__img
    width: 30rem
  .footer, footer
@@ -144,12 +136,18 @@
  .card
   min-height: 368px !important
  .card-pair
-  flex-direction: column
-  align-items: center
+  grid-template-columns: 1fr !important
+  justify-items: center !important
  .forma
   &__screen
    &-two
     padding: 5rem 8rem
+
+ .wrapper
+  grid-template-columns: 1fr
+  &-grid
+   &:last-child
+    display: block
  
 @media (max-width: 560px)
  .part
