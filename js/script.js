@@ -1,4 +1,9 @@
 jQuery(document).ready(function() {
+	$('#fileToUpload').change(function() {
+		$('.file-okey').addClass('okey-active');
+		$('.file-link').css('display', 'none');
+	});
+
 	$('.ham').on('click', function() {
 		$('body').toggleClass('activeMenu');
 	});
