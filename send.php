@@ -1,10 +1,13 @@
 <?php
+
+$file_name = $_FILES['file']['name'];
+move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $file_name);
+$file_name = 'uploads/'.$file_name;
+
+$link = 'http://'.$_SERVER['HTTP_HOST'];
+
 $to = 'work-biznesrost24@yandex.by'; //Почта получателя, через запятую можно указать сколько угодно адресов
 $subject = 'Заявка с сайта '.$_SERVER['SERVER_NAME'] . ' ' . $_POST['form']; //Заголовок сообщения
-
-$uploaddir = 'uploads/';
-$uploadfile = $uploaddir . basename($_FILES['fileToUpload']['name']);
-move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile);
 
 $message = '
         <html>
@@ -24,9 +27,12 @@ $message = '
             $message .= '<p>Email: '.$_POST['user_email'].'</p>';
         if(isset($_POST['user_message']) && $_POST['user_message'] !== '')
             $message .= '<p>Сообщение: '.$_POST['user_message'].'</p>';
+        if($file_name !== '' && $_POST['form_num'] != '')
+            $message .= '<p><a href="'.$link.'/forma-slova/'.$file_name.'">Файл</a> (если файл не открывается, подождите! Он загружается на сервер)</p>';
         if($check !== false) {
             $message .= $check["mime"];
         }
+
 $message .= '                 
             </body>
         </html>'; //Текст нащего сообщения можно использовать HTML теги

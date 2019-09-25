@@ -377,20 +377,20 @@
 						Не важно, какой у Вас бюджет и задача, мы найдем решение!
 					</h3>
 					<!-- /.h3 -->
-					<form id="form-3" enctype="multipart/form-data" action="javascript:" onsubmit="sendForm('#form-3')">
+					<form id="form-3" enctype="multipart/form-data" action="javascript:" onsubmit="sendForm('#form-3')" method="POST">
 						<div class="part">
 							<div class="part-one">
 								<span class="label-pair">
 									<label for="form-three-name" class="placeholder">Ваше имя<span> *</span></label>
-									<input type="name" id="form-three-name" required name="user_name">
+									<input type="name" id="form-three-name user_name" required name="user_name">
 								</span>
 								<span class="label-pair">
 									<label for="form-three-phone" class="placeholder">№ телефона<span> *</span></label>
-									<input type="text" id="form-three-phone" required name="user_phone">
+									<input type="text" id="form-three-phone user_phone" required name="user_phone">
 								</span>								
 								<span class="label-pair">
 									<label for="form-three-email" class="placeholder">E-mail</label>
-									<input type="email" id="form-three-email" name="user_email">
+									<input type="email" id="form-three-email user_email" name="user_email">
 								</span>
 							</div>
 							<!-- /.part-one -->
@@ -400,7 +400,7 @@
 									<textarea name="user_message" id="query" cols="30" rows="5" required id="form-three-message"></textarea>
 								</span>
 								<input type="file" name="fileToUpload" id="fileToUpload">
-								<label for="fileToUpload" class="fileToUpload">
+								<label for="fileToUpload" class="fileToUpload" id="filename">
 									<i class="fas fa-paperclip file-link"></i>
 									<i class="animated fadeInLeft file-okey fas fa-check"></i>
 									<span>прикрепить файл</span>
@@ -716,22 +716,45 @@
 	<!-- Обработчик форм -->
 <script>
     function sendForm(form) {
-        var  msg = $(form).serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'send.php',
-            data: msg,
-            success: function(data) {
-                $.modal.close();
-                $("#thanks").modal();
-                console.log('ok')
-            },
-            error: function () {
-                $.modal.close();
-                console.log('error')
-            }
-        });
+        var file_data = $('#fileToUpload').prop('files')[0];
+		var form_data = new FormData();
+		form_data.append('file', file_data);
+		form_data.append('user_message', $('#query').val());
+		form_data.append('form_num', $('#form-3'));
+		form_data.append('user_name', $('input[type="name"]').val());
+		form_data.append('user_phone', $('input[type="text"]').val());
+		form_data.append('user_email', $('input[type="email"]').val());
+		$.ajax({
+			url: 'send.php', // point to server-side PHP script
+			dataType: 'text',  // what to expect back from the PHP script, if anything
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: form_data,
+			type: 'post',
+			success: function () {
+				$("#thanks").modal();
+			}
+		});
     }
+
+     function sendFormTwo(form) {
+            var  msg = $(form).serialize();
+            $.ajax({
+                type: 'POST',
+                url: 'send.php',
+                data: msg,
+                success: function(data) {
+                    $.modal.close();
+                    $("#thanks").modal();
+                    console.log('ok')
+                },
+                error: function () {
+                    $.modal.close();
+                    console.log('error')
+                }
+            });
+        }
 </script>
 
 <!-- Modal HTML embedded directly into document -->
@@ -744,7 +767,7 @@
 		Наш менеджер свяжется с Вами в ближайшее время
 	</p>
 	<!-- /.description -->
-	<form id="form-1" action="javascript:" onsubmit="sendForm('#form-1')">
+	<form id="form-1" action="javascript:" onsubmit="sendFormTwo('#form-1')">
 		<span class="label-pair">
 			<label for="form-three-name" class="placeholder">Ваше имя<span> *</span></label>
 			<input type="name" id="form-three-name" required name="user_name">
@@ -774,7 +797,7 @@
 		Наш менеджер свяжется с Вами в ближайшее время
 	</p>
 	<!-- /.description -->
-	<form id="form-2" action="javascript:" onsubmit="sendForm('#form-2')">
+	<form id="form-2" action="javascript:" onsubmit="sendFormTwo('#form-2')">
 		<span class="label-pair">
 			<label for="form-three-name" class="placeholder">Ваше имя<span> *</span></label>
 			<input type="name" id="form-three-name" required name="user_name">
